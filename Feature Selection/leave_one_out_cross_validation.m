@@ -1,15 +1,9 @@
 function accuracy = leave_one_out_cross_validation(data,current_set,features_to_add,choice)
+     %     forward selection
     if choice == 1   
         current_set_cols = current_set + 1; % adding 1 to every element of current_set because I need the actual column number in the table
                                             % features_to_add already hold the column number.
 
-%         disp('current set cols')
-%         disp(current_set_cols)
-% 
-%         disp('feature to add')
-%         disp(features_to_add)   
-
-    %     forward selection
         cols_to_send = [current_set_cols features_to_add]; % now the vector cols_to_send has col. nos. of columns of data to be sent to knn
 
         count_of_correct_classifications = 0;
@@ -61,5 +55,6 @@ function accuracy = leave_one_out_cross_validation(data,current_set,features_to_
 
          end
           accuracy = (count_of_correct_classifications / total_rows) * 100;
-    end    
+    end  
+
 end

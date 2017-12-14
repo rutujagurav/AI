@@ -1,11 +1,7 @@
 function [nearest_k, inds_of_nearest_k] = knn(data,data_elem_row)
-% function class = knn(data,data_elem_row)
-%     disp('inside knn')
     N = size(data,1);
     k = 3;
-%     data_elem = data(1,:); %new data element which we have to classify, which for now is just the first row.
-%     disp('data elem row no.')
-%     disp(data_elem_row)
+
     data_elem = data(data_elem_row,:);
     distance = zeros(1,N);
     for i = 1 : N
